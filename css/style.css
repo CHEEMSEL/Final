@@ -7,13 +7,14 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background-color: #f5f5f5;
-  color: #222;
+  background-color: #fafafa;
+  color: #111;
 }
 
 header, footer {
   text-align: center;
-  background-color: #eee;
+  background-color: #ddd;
+  color: #000;
   padding: 1em 0;
 }
 
@@ -29,7 +30,7 @@ main {
 
 figure {
   background-color: #fff;
-  border: 2px solid #ccc;
+  border: 2px solid #999;
   padding: 10px;
   text-align: center;
   transition: transform 0.3s ease;
@@ -50,14 +51,14 @@ figcaption {
   font-weight: bold;
 }
 
+/* Tablet view */
 @media (min-width: 772px) {
   .grid {
     grid-template-columns: 1fr 1fr;
   }
 
-figure {
+  figure img {
     border-radius: 50%;
-    overflow: hidden;
   }
 
   .grid figure:last-child {
@@ -65,8 +66,13 @@ figure {
   }
 }
 
+/* Large screen view */
 @media (min-width: 992px) {
-  figure {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  figure img {
     border-radius: 0;
   }
 
@@ -75,30 +81,39 @@ figure {
   }
 }
 
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-
   figure {
     transition: none;
   }
 }
 
+/* Dark mode */
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #121212;
-    color: #e0e0a0;
+    color: #f5f5f5;
   }
 
   figure {
-    background-color: #333;
-    color: #e0e0a0;
-    border-color: black;
+    background-color: #222;
+    color: #f5f5f5;
+    border: 2px solid #000;
   }
 
   header, footer {
     background-color: #1e1e1e;
-    color: #f0f0f0;
+    color: #f5f5f5;
+  }
+
+  a {
+    color: #66aaff;
+  }
+
+  a:focus, a:hover {
+    color: #99cfff;
   }
 }
